@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Notes from './components/Notes'
+import Input from './components/Input'
 
 
 
@@ -9,19 +10,24 @@ function App() {
   [
     {
       id: 1,
-      text: 'Check the description for my Frontend Interview'
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt esse laudantium sit eligendi.'
     },
     {
       id: 2,
-      text:' Like this video and Subsribe to Roadside programer'
+      text:' Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium excepturi reiciendis nostrum.'
     }
   ])
   
+  const updateNotes = (text) => {
+    console.log(text)
 
+    setNotes([{id:new Date().getSeconds(),text:text},...notes])
+    
+  }
   return (
     <div>
-      
-      <Notes notes={notes} seNotes={ setNotes} />
+      <Input updateNotes={updateNotes}/>
+      <Notes notes={notes} setNotes={ setNotes} />
     </div>
   )
 }
