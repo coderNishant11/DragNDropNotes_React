@@ -9,7 +9,7 @@ export const Input = ({ updateNotes }) => {
     }
     return <div className="input-container">
         <input className="input-box" ref={inputRef} type="text" name="text" id="text" />
-        <button className='input-btn' onClick={handleClick }>Click</button>
+        <button className='input-btn' onClick={handleClick }>Add Note</button>
   </div>;
 };
 
